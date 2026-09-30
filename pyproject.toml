@@ -1,0 +1,62 @@
+[project]
+dependencies = [
+    "PySide6",
+    "matplotlib",
+    "numpy",
+]
+description = "A modular program for controlling pulsed NMR applications for Red Pitaya boards"
+license = "MIT"
+maintainers = [
+    { name = "Pavel Demin" },
+]
+name = "pulsed-nmr-client"
+readme = "README.md"
+requires-python = ">=3.13"
+version = "0.1"
+
+[project.urls]
+source = "https://github.com/pavel-demin/pulsed-nmr-client"
+
+[tool.black]
+line-length = 120
+target-version = [
+    "py313",
+]
+
+[tool.pytest.ini_options]
+testpaths = [
+    "tests",
+]
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint.per-file-ignores]
+"app/main_window.py" = [
+    "BLE001",
+]
+"common/plot_widget.py" = [
+    "BLE001",
+]
+"common/sequence_logic.py" = [
+    "BLE001",
+    "RUF012",
+]
+"common/sequence_ui.py" = [
+    "RUF012",
+]
+"sequences/cal_pulse/ui.py" = [
+    "RUF012",
+]
+"sequences/cpmg/ui.py" = [
+    "RUF012",
+]
+"sequences/fid/ui.py" = [
+    "RUF012",
+]
+"tests/system/cli_driver.py" = [
+    "BLE001",
+]
+"tests/system/gui_driver.py" = [
+    "BLE001",
+]
